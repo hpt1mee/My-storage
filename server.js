@@ -3,7 +3,7 @@ const path = require('path');
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'html')));
+app.use('/html',express.static(path.join(__dirname, 'html')));
 app.use('/css', express.static(path.join(__dirname, 'css')));
 app.use('/script', express.static(path.join(__dirname, 'script')));
 app.use('/img', express.static(path.join(__dirname, 'img')));
