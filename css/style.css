@@ -1,0 +1,103 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	color: white;
+}
+:root {
+	/* DT - dark theme
+				LT - light theme
+	от более темных к светлым */
+	--DTBlue1: #0e1116;
+	--DTBlue2: #171c21;
+	--DTBlue3: #21262e;
+	--DTBlue4: #2b313a;
+	--DTBlue5: #353d47;
+	--DTBlue6: #4b5563;
+	--DTBlue7: #404955;
+	--DTText: #acbace;
+	--LTBlue1: #2c3a4e;
+	--LTBlue2: #3c4c63;
+	--LTBlue3: #465670;
+	--LTBlue4: #5c6d88;
+	--LTBlue5: #6b7b96;
+	--LTBlue6: #8292ac;
+	--LTBlue7: #b3c6e4;
+	--LTText: #1b1f24;
+}
+body {
+	background-color: var(--DTBlue2) ;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.rounded-h1 {
+	width: 30%;
+	height: 80%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--DTBlue2);
+	border-radius: 40px;
+	border: 2px solid black;
+	transition: .3s all;
+	cursor: pointer;
+	font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+header {
+	width: 100vw;
+	height: 10%;
+	display: flex ;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--DTBlue1);
+	border-bottom: 2px solid black;
+}
+
+.rounded-h1:hover {
+ transform: scale(1.05);
+}
+.t2 {
+	width: 100vw;
+	height: 5%;
+	display: flex ;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--DTBlue1);
+	border-bottom: 2px solid black;
+}
+a {
+	text-decoration: none;
+	font-size: 1.5em;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.main {
+	width: 100vw;
+	height: 85%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 2%;
+}
+.English-Academy, .libraries,.Frameworks,.Booktrailer{
+	width: 20%;
+	height: 7%;
+	background-color: var(--DTBlue3);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 40px;
+	cursor: pointer;
+	border:3px solid  var(--DTBlue1);
+	transition: .3s all;
+}
+
+.English-Academy:hover, .libraries:hover, .Frameworks:hover, .Booktrailer:hover {
+ transform: scale(1.1);
+}
