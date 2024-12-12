@@ -1,14 +1,25 @@
-const downloadBlocks = document.querySelectorAll('.download-block');
-downloadBlocks.forEach(block => {
-	block.addEventListener('click', () => {
-	const fileUrl = block.getAttribute('data-file-url');
-	if (fileUrl) {
-	const anchor = document.createElement('a');
-	anchor.href = fileUrl;
-	anchor.download = '';
-	document.body.appendChild(anchor);
-	anchor.click();
-	document.body.removeChild(anchor);
-				}
-});
-});
+const dops = document.querySelector('.Dops')
+const scrollWrap = document.querySelector('body')
+
+const height = () => scrollWrap.getBoundingClientRect().height
+const speed = .08
+
+let offset = 0
+
+// Scroll
+const smoothScroll = () => {
+    offset += (window.pageYOffset - offset) * speed
+
+    scrollWrap.style.transform = 'translateY(-' + offset + 'px) translateZ(0)'
+
+    window.requestAnimationFrame(smoothScroll)
+}
+smoothScroll()
+
+// Resize
+const handleResize = () => {
+    document.body.style.height = Math.floor(height()) + 'px'
+}
+handleResize()
+
+window.addEventListener('resize', handleResize)

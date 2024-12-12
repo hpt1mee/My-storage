@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../css/dops.css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+	
+</head>
+<body>
+	<header><h1>Допы</h1></header>
+	<div class='main'>
+		<div class="dop1">
+			<div class="header-dop">Доп 1</div>
+			<pre><code class="language-javascript">
+	function DigPow(n, k) {
+		let arr = []
+		let counter = 0
+		arr.push(n)
+		arr = arr.join('').split('') 
+		arr.forEach((el,i) => counter += Math.pow(el, k+i))
+		if (counter % n == 0) return counter / n
+		else return -1 
+	}
+	console.log(DigPow(89,1))
+	console.log(DigPow(695,2))
+	console.log(DigPow(92,1))
+	console.log(DigPow(46288,3))
+								</code></pre>
+								<img class='dopresult1' src="../img-dop/dop1.png" alt="">
+		</div>
+		<div class="dop2">
+			<div class="header-dop">Доп 2</div>
+			<pre><code class="language-javascript">
+	function Wave(str) {
+		let ResultArray = []
+		let NewStr = ''
+		for (let i = 0; i < str.length; i++) {
+			if (str[i] != ' ') {
+				NewStr = str.slice(0,i) + str[i].toUpperCase() + str.slice(i+1)
+				ResultArray.push(NewStr)
+   }
+  }
+		return ResultArray
+	}
+	console.log(Wave("hello"));
+	console.log(Wave("gap"));
+	console.log(Wave("two wor"));
+	console.log(Wave(""));
+								</code></pre>
+								<img class='dopresult1' src="../img-dop/dop2.png" alt="">
+		</div>
+		<div class="dop2">
+			<div class="header-dop">Доп 3</div>
+			<pre><code class="language-javascript">
+function ConvertString(str) { 
+      return str.toLowerCase().split('').map(el => str.indexOf(el) == str.lastIndexOf(el) ? '(' : ')').join('')
+}
+
+console.log(ConvertString('din'));
+console.log(ConvertString('recede'));
+console.log(ConvertString('Success'));
+console.log(ConvertString('(( @'));
+								</code></pre>
+								<img class='dopresult1' src="../img-dop/dop2.png" alt="">
+		</div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+</body>
+</html>

@@ -85,7 +85,7 @@ a {
 	flex-direction: column;
 	gap: 2%;
 }
-.English-Academy, .libraries,.Frameworks,.Booktrailer{
+.Dops,.hometasks{
 	width: 20%;
 	height: 7%;
 	background-color: var(--DTBlue3);
@@ -97,7 +97,6 @@ a {
 	border:3px solid  var(--DTBlue1);
 	transition: .3s all;
 }
-
-.English-Academy:hover, .libraries:hover, .Frameworks:hover, .Booktrailer:hover {
+.Dops:hover,.hometasks:hover{
  transform: scale(1.1);
 }

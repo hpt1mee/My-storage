@@ -13,16 +13,6 @@ app.get('/', (req, res) => {
   });
   
 
-app.get('/download', (req, res) => {
-    const fileName = req.query.file;
-    const filePath = path.join(__dirname, 'files', fileName);
-
-    res.download(filePath, fileName, (err) => {
-        if (err) {
-            res.status(404).send('File not found');
-        }
-    });
-});
 
 const PORT = 3000;
 app.listen(PORT, () => {
