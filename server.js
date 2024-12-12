@@ -3,14 +3,15 @@ const path = require('path');
 
 const app = express();
 
-app.use('/html', express.static(path.join(__dirname, 'html')));
+app.use(express.static(path.join(__dirname, 'html')));
 app.use('/css', express.static(path.join(__dirname, 'css')));
 app.use('/script', express.static(path.join(__dirname, 'script')));
 app.use('/img', express.static(path.join(__dirname, 'img')));
 
 app.get('/', (req, res) => {
-    res.send('Welcome to my Express server!');
-});
+    res.sendFile(path.join(__dirname, 'html', 'main.html'));
+  });
+  
 
 app.get('/download', (req, res) => {
     const fileName = req.query.file;
