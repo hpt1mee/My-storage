@@ -6,7 +6,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'html')));
 app.use('/css', express.static(path.join(__dirname, 'css')));
 app.use('/script', express.static(path.join(__dirname, 'script')));
-app.use('/img-dop', express.static(path.join(__dirname, 'img-dop')));
+app.use('/img', express.static(path.join(__dirname, 'img')));
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'html', 'index.html'));
