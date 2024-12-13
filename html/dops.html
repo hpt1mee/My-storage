@@ -1,72 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<link rel="stylesheet" href="../css/dops.css">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
-	
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Допы</title>
+    <link rel="stylesheet" href="../css/dops.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">	
 </head>
 <body>
-	<header><h1>Допы</h1></header>
-	<div class='main'>
-		<div class="dop1">
-			<div class="header-dop">Доп 1</div>
-			<pre><code class="language-javascript">
-	function DigPow(n, k) {
-		let arr = []
-		let counter = 0
-		arr.push(n)
-		arr = arr.join('').split('') 
-		arr.forEach((el,i) => counter += Math.pow(el, k+i))
-		if (counter % n == 0) return counter / n
-		else return -1 
-	}
-	console.log(DigPow(89,1))
-	console.log(DigPow(695,2))
-	console.log(DigPow(92,1))
-	console.log(DigPow(46288,3))
-								</code></pre>
-								<img class='dopresult1' src="../img-dop/dop1.png" alt="">
-		</div>
-		<div class="dop2">
-			<div class="header-dop">Доп 2</div>
-			<pre><code class="language-javascript">
-	function Wave(str) {
-		let ResultArray = []
-		let NewStr = ''
-		for (let i = 0; i < str.length; i++) {
-			if (str[i] != ' ') {
-				NewStr = str.slice(0,i) + str[i].toUpperCase() + str.slice(i+1)
-				ResultArray.push(NewStr)
-   }
-  }
-		return ResultArray
-	}
-	console.log(Wave("hello"));
-	console.log(Wave("gap"));
-	console.log(Wave("two wor"));
-	console.log(Wave(""));
-								</code></pre>
-								<img class='dopresult1' src="../img-dop/dop2.png" alt="">
-		</div>
-		<div class="dop2">
-			<div class="header-dop">Доп 3</div>
-			<pre><code class="language-javascript">
-function ConvertString(str) { 
-      return str.toLowerCase().split('').map(el => str.indexOf(el) == str.lastIndexOf(el) ? '(' : ')').join('')
+    <header><h1>Допы</h1></header>
+    <div class="main">
+					<div class="border">
+        <div class="dop1 first">
+            <div class="header-dop">Доп 1</div>
+            <pre><code class="language-javascript">
+function DigPow(n, k) {
+    let arr = [];
+    let counter = 0;
+    arr.push(n);
+    arr = arr.join('').split('');
+    arr.forEach((el, i) => counter += Math.pow(el, k + i));
+    return counter % n === 0 ? counter / n : -1;
 }
-
+console.log(DigPow(89, 1));
+console.log(DigPow(695, 2));
+            </code></pre>
+            <img class='dopresult1' src="../img-dop/dop1.png" alt="">
+        </div>
+								</div>
+								<div class="border">
+        <div class="dop2 second">
+            <div class="header-dop">Доп 2</div>
+            <pre><code class="language-javascript">
+function Wave(str) {
+    let ResultArray = [];
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] !== ' ') {
+            let NewStr = str.slice(0, i) + str[i].toUpperCase() + str.slice(i + 1);
+            ResultArray.push(NewStr);
+        }
+    }
+    return ResultArray;
+}
+console.log(Wave("hello"));
+console.log(Wave("gap"));
+            </code></pre>
+												
+            <img class='dopresult1' src="../img-dop/dop2.png" alt="">
+        </div>
+							</div>
+							<div class="border">
+        <div class="dop2 dop3">
+								
+            <div class="header-dop">Доп 3</div>
+            <pre><code class="language-javascript">
+function ConvertString(str) {
+    return str.toLowerCase().split('').map(el =>
+        str.indexOf(el) === str.lastIndexOf(el) ? '(' : ')'
+    ).join('');
+}
 console.log(ConvertString('din'));
 console.log(ConvertString('recede'));
-console.log(ConvertString('Success'));
-console.log(ConvertString('(( @'));
-								</code></pre>
-								<img class='dopresult1' src="../img-dop/dop2.png" alt="">
-		</div>
+            </code></pre>
+            <img class='dopresult1' src="../img-dop/3dop.png" alt="">
+        </div>
+    </div>
+				<div class="border">
+					<div class="dop2 dop4">
+					
+									<div class="header-dop">Доп 4</div>
+									<pre><code class="language-javascript">
+let AlphToLower = 'abcdefghijklmnopqrstuvwxyz'
+let AlphToUpper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+function LostLetter(arr) {
+	let FirstIndex = AlphToLower.indexOf(arr[0])
+	let FirstIndexUpper = AlphToUpper.indexOf(arr[0])
+
+	if (arr.every(el => el === el.toLowerCase())) {
+		for (let i = 0; i < arr.length; i++) {
+			if (AlphToLower[FirstIndex + i] !== arr[i]) {
+				return AlphToLower[FirstIndex + i]
+			}
+		}
+		return AlphToLower[FirstIndex + arr.length];
+	}
+	else if (arr.every(el => el === el.toUpperCase())) {
+		for (let i = 0; i < arr.length; i++) {
+		 if (AlphToUpper[FirstIndexUpper + i] !== arr[i]) {
+				return AlphToUpper[FirstIndexUpper + i]
+			}
+		}
+return AlphToUpper[FirstIndexUpper + arr.length]
+	}
+}
+console.log(LostLetter(['a', 'b', 'c', 'd']));  
+console.log(LostLetter(['O', 'Q', 'R', 'S']));  
+									</code></pre>
+									<img class='dopresult1' src="../img-dop/4.png" alt="">
+					</div>
 	</div>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+	<div class="border">
+		<div class="dop2 dop5">
+		
+						<div class="header-dop">Доп 5</div>
+						<pre><code class="language-javascript">
+let maze = [
+[1,1,1,1,1,1,1],
+[1,0,0,0,0,0,3],
+[1,0,1,0,1,0,1],
+[0,0,1,0,0,0,1],
+[1,0,1,0,1,0,1],
+[1,0,0,0,0,0,1],
+[1,2,1,0,1,0,1]
+]
+function FindPos(maze) {
+for (let i = 0; i < maze.length; i++) {
+for (let j = 0; j < maze[i].length; j++) {
+	if (maze[i][j] == 2) return [i, j]
+}
+}
+}
+function mazeRunner(maze, directions) {
+let pos = FindPos(maze)
+for (let i = 0; i < directions.length; i++) {
+switch(directions[i]) {
+case 'N':
+	pos[0] -= 1
+	break
+case "S":
+	pos[0] += 1
+	break
+case 'E':
+	pos[1] += 1
+	break
+case 'W':
+	pos[1] -= 1
+	break
+}
+if (pos[0] < 0 || pos[0] >= maze.length || pos[1] < 0 || pos[1] >= maze[0].length) {
+	 return 'деад'
+}
+let FinalPos = maze[pos[0]][pos[1]]
+if (FinalPos == 1) return 'вы в сткене'
+if (FinalPos == 3) return 'ура'
+}
+return 'лост'
+}
+console.log(mazeRunner(maze, ["N","N","N","N","N","E","E","E","E","E"]))
+console.log(mazeRunner(maze, ["N","N","N","N","N","E","E","S","S","E","E","N","N","E"]))
+console.log(mazeRunner(maze, ["N","N","N","W","W"]))
+console.log(mazeRunner(maze, ["N","E","E","E","E"]))
+						</code></pre>
+						<img class='dopresult1' src="../img-dop/5.png" alt="">
+		</div>
+</div>
+<div class="border">
+	<div class="dop2 dop6">
+	
+					<div class="header-dop">Доп 6</div>
+					<pre><code class="language-javascript">
+function Rot13(str) {
+const alph = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz';
+const alphUp = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz'.toUpperCase();
+let ResultStr = ''
+let counter = 0
+
+for (let i = 0; i < str.length; i++) {
+let char = str[i]
+	if (alph.includes(char)) {
+					ResultStr += alph[alph.indexOf(char) + 13];
+	}
+	if (alphUp.includes(char)) {
+					ResultStr += alphUp[alphUp.indexOf(char) + 13];
+	}
+	else if (!alphUp.includes(char) && !alph.includes(char)) ResultStr += char
+} 
+return ResultStr
+}
+console.log(Rot13('test'));
+console.log(Rot13('10+2 is twelve.'));
+console.log(Rot13('abcdefghijklmnopqrstuvwxyz'));
+					</code></pre>
+					<img class='dopresult1' src="../img-dop/6.png" alt="">
+	</div>
+</div>
+<div class="border">
+	<div class="dop2 dop7">
+	
+					<div class="header-dop">Доп 7</div>
+					<pre><code class="language-javascript">
+function GreedScore(arr) {
+	let score = 0
+	
+	let streak1 = arr.filter(el => el == 1)
+	let streak6 = arr.filter(el => el == 6)
+	let streak5 = arr.filter(el => el == 5)
+	let streak4 = arr.filter(el => el == 4)
+	let streak3 = arr.filter(el => el == 3)
+	let streak2 = arr.filter(el => el == 2)
+	
+	if (streak1.length >= 3) score += 1000
+	if (streak2.length >= 3) score += 200
+	if (streak3.length >= 3) score += 300
+	if (streak4.length >= 3) score += 400
+	if (streak5.length >= 3) score += 500
+	if (streak6.length >= 3) score += 600
+
+	if (streak1.length != 3) score += 100 * streak1.length
+	if (streak5.length != 3) score += 50 * streak5.length
+
+	return score
+}
+
+console.log(GreedScore([4, 4, 4, 3, 4]))
+console.log(GreedScore([2, 4, 4, 5, 4]))
+console.log(GreedScore([2, 3, 4, 6, 2]))
+console.log(GreedScore([3, 3, 3, 4, 5]))]]
+					</code></pre>
+					<img class='dopresult1' src="../img-dop/7.png" alt="">
+	</div>
+</div>
+<div class="border">
+	<div class="dop2 dop8">
+	
+					<div class="header-dop">Доп 8</div>
+					<pre><code class="language-javascript">
+function CheckBrackets(str) {
+let count = 0
+
+for (let i of str) {
+	if (i == '(') count++
+	if (i == ')') count--
+	if (count < 0) return false
+}
+if ( count == 0 ) return count == 0
+}
+
+console.log(CheckBrackets('()()()())')); // false
+console.log(CheckBrackets('((((()))))')); // true
+console.log(CheckBrackets('(())((()((()))))')); // true
+console.log(CheckBrackets('()')); // true
+console.log(CheckBrackets('()()')); // true
+console.log(CheckBrackets('))((')); // false
+console.log(CheckBrackets('(())((()((()))))')); // true  
+					</code></pre>
+					<img class='dopresult1' src="../img-dop/3.png" alt="">
+	</div>
+</div>
+			</div>
+			<script src="../script/dops.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
 </body>
 </html>
